@@ -1,2 +1,2 @@
 # Bird-Watching-Recommendation-System
-This project aims to create a bird watching recommendation system that, based on user inputs of date, location, and bird species, provides recommendations on optimal timings and locations for observing the selected bird species.
+This project’s objective is to recommend species of birds to a user based on a user's characteristics and observation history, and then predict the most accurate and optimal times and locations to sight these birds.
