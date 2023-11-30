@@ -1,6 +1,0 @@
-numpy==1.26.2
-pandas==1.5.3
-geopandas==0.14.1
-ipyleaflet==0.17.4
-ipywidgets==8.1.1
-branca==0.7.0
