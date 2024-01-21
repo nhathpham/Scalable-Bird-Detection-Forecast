@@ -12,13 +12,16 @@ Throughout the project, we actively engage with birdwatchers and conservationist
 ## Data
 ### Source & Acquisition
 #### eBird
-We use the eBird dataset from the Cornell Lab of Ornithology (ebird.org/data), which consists of global bird sightings recorded by professional and amateur bird watchers (Cornell, 2023). To understand local preferences, we conducted a survey among birders in Massachusetts (MA), receiving 102 responses. Notably, 83% indicated a tendency to visit regular or nearby locations (Appendix Figure A1). This insight, combined with computational limitations, guided our decision to focus our analysis exclusively on MA. We extracted 8.5GB of bird sighting data for MA from eBird.org, spanning from 2013 to 2022. 
+- Utilize eBird dataset from Cornell Lab of Ornithology (ebird.org/data) comprising global bird sightings by professional and amateur bird watchers (Cornell, 2023).
+- Conducted a survey among Massachusetts (MA) birders (102 responses), revealing 83% prefer regular or nearby locations (Appendix Figure A1), guiding our exclusive focus on MA.
+- Extracted 8.5GB of MA bird sighting data from eBird.org (2013-2022).
+- Dataset comprises observation and checklist data; observation rows detail individual bird sightings, including species, location, date, time, and notes. Checklist data aggregates observations for specific outings, summarizing total species count, location, date, time, and participant count.
+- Given the inadequacy of eBird's API for detailed analyses, we opted for website data download over API calls.
 
-The dataset is organized into two primary components: observation data and checklist data. In the observation data, each row represents an individual bird species sighting, providing detailed information about the species observed, the specific location, date, time, and any additional notes. Checklist data, on the other hand, compiles these individual observations into structured records centered around specific bird-watching outings or events. Each checklist summarizes the observations made during these events, including aggregated details such as the total count of each species and contextual information like the location, date, time, and the number of participants. 
-
-Given the inadequacy of eBird's API for detailed analyses, we opted for website data download over API calls.
-
-#### Other sources
+#### Other
+- National Centers for Environmental Information (NCEI): for temperature and precipitation data. Attempted incorporation into the forecast model as environmental regressors, but no improvement observed, likely due to mismatched units (monthly temperature data vs. weekly detection rate data); not included in the final model.
+- American Birding Association’s 2023 species checklist and Massachusetts Avian Records Committee’s birds-in-review list: for uncommon bird species, supporting the birding activity analysis
+  
 
 ### Data processing
 - Initial data cleaning and filtering used the 'auk' package in R, designed for eBird data. Only complete checklists were included, with refinement by restricting checklist duration, distances, speeds, and group sizes.
@@ -26,24 +29,19 @@ Given the inadequacy of eBird's API for detailed analyses, we opted for website 
 - Null detection rates were assigned to weeks with fewer than 5 checklists to maintain time series continuity for uninterrupted data sequences.
 - Additional processing on location data uses KDTree algorithm and geodesic package for pairing user-input addresses with nearest predefined locations
 
-## Code structure
-
-├── data
-│   ├── data1.csv
-│   ├── data2.csv
-│   ├── cleanedData
-│   │   ├── cleaneddata1.csv
-|   |   └── cleaneddata2.csv
-├── data_acquisition.py
-├── data_preprocessing.ipynb
-├── data_analysis.ipynb
-├── data_modelling.ipynb
-├── Img
-│   ├── img1.png
-│   ├── Headerheader.jpg
-├── LICENSE
-├── README.md
-└── .gitignore
+## Code structure for forecast model
+```bash
+├── cleaned data
+│   ├── allbirds_detection.feather
+├── data_cleaning.R
+├── data_finalpreprocessing.py
+├── detection_forecast_model.py
+├── deliverables
+│   ├── Final Presentation - Phase 1.pdf
+│   ├── Final Presentation - Phase 2.pdf
+│   ├── Final Report - Phase 1.docx
+│   ├── Final Report - Phase 2.docx
+```
 
 ## Result 
 
