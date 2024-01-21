@@ -19,7 +19,7 @@ Throughout the project, we actively engage with birdwatchers and conservationist
 - Given the inadequacy of eBird's API for detailed analyses, we opted for website data download over API calls.
 
 #### Other
-- National Centers for Environmental Information (NCEI): for temperature and precipitation data. Attempted incorporation into the forecast model as environmental regressors, but no improvement observed, likely due to mismatched units (monthly temperature data vs. weekly detection rate data); not included in the final model.
+- NCEI: for temperature and precipitation data. Incorporation into the forecast model as environmental regressors yielded no improvement observed, likely due to mismatched units (monthly temperature data vs. weekly detection rate data); not included in the final model.
 - American Birding Association’s 2023 species checklist and Massachusetts Avian Records Committee’s birds-in-review list: for uncommon bird species, supporting the birding activity analysis
   
 
