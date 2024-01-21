@@ -1,4 +1,11 @@
-# Bird-Watching-Recommendation-System
+# Optimal Birdwatching in Massachussetts
+
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/pragyy/datascience-readme-template?include_prereleases)
+![GitHub last commit](https://img.shields.io/github/last-commit/pragyy/datascience-readme-template)
+![contributors](https://img.shields.io/github/contributors/nhathpham/Scalable-Bird-Detection-Forecast) 
+![codesize](https://img.shields.io/github/languages/code-size/pragyy/datascience-readme-template) 
+
+
 This project’s objective is to recommend species of birds to a user based on a user's characteristics and observation history, and then predict the most accurate and optimal times and locations to sight these birds based on previous bird behavior and migratory patterns. 
 
 This project used 465 bird species across 14 Massachusetts counties. The data consisted of sightings from 2013 to 2022 and aimed to forecast for the years 2023 and 2024. 
