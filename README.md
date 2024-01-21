@@ -29,6 +29,14 @@ Throughout the project, we actively engage with birdwatchers and conservationist
 - Null detection rates were assigned to weeks with fewer than 5 checklists to maintain time series continuity for uninterrupted data sequences.
 - Additional processing on location data uses KDTree algorithm and geodesic package for pairing user-input addresses with nearest predefined locations
 
+## Forecast model
+For preprocessing, we streamlined the dataset by removing unnecessary columns and renaming the date and target columns, along with adjusting the data types. We employed logistic regression and specified a saturating mininum. This stabilized forecasted values as they approached the limits over time. When forecasted values fell below zero, we adjusted forecasts to zero to maintain logical consistency.
+
+For model optimization, we focused on tuning changepoint prior scale parameter through cross-validation. We implemented grid search to identify the parameter setting that minimized RMSE, treating each bird and county independently. To efficiently execute this process, we developed a function that tests all potential parameters for a given bird-county pair. We leveraged Python’s `multiprocessing` library, specifically the `Pool` object, to facilitate parallel testing of these combinations, enhancing the speed and efficiency of our parameter tuning efforts.
+
+We evaluated our model's performance using RMSE and MAE metrics.
+
+
 ## Code structure for forecast model
 ```bash
 ├── cleaned data
@@ -43,6 +51,8 @@ Throughout the project, we actively engage with birdwatchers and conservationist
 │   ├── Final Report - Phase 2.docx
 ```
 
+
+
 ## Result 
 
 ### Forecast model evaluation 
@@ -52,8 +62,6 @@ Throughout the project, we actively engage with birdwatchers and conservationist
 ### Birding activity analysis
 
 ## Future work
-
-
 
 # Demo:
 
@@ -68,16 +76,6 @@ Jupyter notebook - Binder link:
 - Facebook's Prophet forecasting package
 - Numpy
 - Pandas
-
-# Data Source
-We used the eBird dataset from the Cornell Lab of Ornithology. The dataset is organized into two primary components: observation data and checklist data. In the observation data, each row represents an individual bird species sighting, providing detailed information about the species observed, the specific location, date, time, and any additional notes. Checklist data, on the other hand, compiles these individual observations into structured records centered around specific bird-watching outings or events. 
-
-# Design:
-For preprocessing, we streamlined the dataset by removing unnecessary columns and renaming the date and target columns, along with adjusting the data types. We employed logistic regression and specified a saturating mininum. This stabilized forecasted values as they approached the limits over time. When forecasted values fell below zero, we adjusted forecasts to zero to maintain logical consistency.
-
-For model optimization, we focused on tuning changepoint prior scale parameter through cross-validation. We implemented grid search to identify the parameter setting that minimized RMSE, treating each bird and county independently. To efficiently execute this process, we developed a function that tests all potential parameters for a given bird-county pair. We leveraged Python’s `multiprocessing` library, specifically the `Pool` object, to facilitate parallel testing of these combinations, enhancing the speed and efficiency of our parameter tuning efforts.
-
-We evaluated our model's performance using RMSE and MAE metrics.
 
 # How to run:
 1. Clone this repo
