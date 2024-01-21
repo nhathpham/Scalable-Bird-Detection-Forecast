@@ -3,7 +3,7 @@
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/pragyy/datascience-readme-template?include_prereleases)
 ![GitHub last commit](https://img.shields.io/github/last-commit/nhathpham/Scalable-Bird-Detection-Forecast)
 ![contributors](https://img.shields.io/github/contributors/nhathpham/Scalable-Bird-Detection-Forecast) 
-![codesize](https://img.shields.io/github/languages/code-size/pragyy/datascience-readme-template) 
+![codesize](https://img.shields.io/github/languages/code-size/nhathpham/Scalable-Bird-Detection-Forecast) 
 
 
 This project’s objective is to recommend species of birds to a user based on a user's characteristics and observation history, and then predict the most accurate and optimal times and locations to sight these birds based on previous bird behavior and migratory patterns. 
