@@ -1,14 +1,38 @@
 # Optimal Birdwatching in Massachussetts
-
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/pragyy/datascience-readme-template?include_prereleases)
 ![GitHub last commit](https://img.shields.io/github/last-commit/nhathpham/Scalable-Bird-Detection-Forecast)
 ![contributors](https://img.shields.io/github/contributors/nhathpham/Scalable-Bird-Detection-Forecast) 
 ![codesize](https://img.shields.io/github/languages/code-size/nhathpham/Scalable-Bird-Detection-Forecast) 
 
+## Project Overview
 
-This project’s objective is to recommend species of birds to a user based on a user's characteristics and observation history, and then predict the most accurate and optimal times and locations to sight these birds based on previous bird behavior and migratory patterns. 
+Our bird-watching project aims to address the challenges faced by enthusiasts, conservationists, and researchers in planning effective bird-watching excursions, particularly for beginners. We build accurate and scalable times series models to forecast weekly detection rates of 465 species in 14 MA counties and provide recommendations for optimal bird-watching spots and times. The results are presented on an interactive Tableau dashboard for user-friendly trip planning.
 
-This project used 465 bird species across 14 Massachusetts counties. The data consisted of sightings from 2013 to 2022 and aimed to forecast for the years 2023 and 2024. 
+Throughout the project, we actively engage with birdwatchers and conservationists across Massachussetts to understand their needs, obtain knowledge on birding practices, and gather feedback for development iterations.
+
+## Data
+### Source & Acquisition
+We use the eBird dataset from the Cornell Lab of Ornithology (ebird.org/data), which consists of global bird sightings recorded by professional and amateur bird watchers (Cornell, 2023). To understand local preferences, we conducted a survey among birders in Massachusetts (MA), receiving 102 responses. Notably, 83% indicated a tendency to visit regular or nearby locations (Appendix Figure A1). This insight, combined with computational limitations, guided our decision to focus our analysis exclusively on MA. We extracted 8.5GB of bird sighting data for MA from eBird.org, spanning from 2013 to 2022. 
+
+The dataset is organized into two primary components: observation data and checklist data. In the observation data, each row represents an individual bird species sighting, providing detailed information about the species observed, the specific location, date, time, and any additional notes. Checklist data, on the other hand, compiles these individual observations into structured records centered around specific bird-watching outings or events. Each checklist summarizes the observations made during these events, including aggregated details such as the total count of each species and contextual information like the location, date, time, and the number of participants. 
+
+Given the inadequacy of eBird's API for detailed analyses, we opted for website data download over API calls.
+
+### Data processing
+
+## Code structure
+
+## Result 
+
+### Forecast model evaluation 
+
+### Tableau dashboard
+
+### Birding activity analysis
+
+## Future work
+
+
 
 # Demo:
 
