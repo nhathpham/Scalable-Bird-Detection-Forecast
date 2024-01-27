@@ -30,14 +30,7 @@ Throughout the project, we actively engage with birdwatchers and conservationist
 - Additional processing on location data uses KDTree algorithm and geodesic package for pairing user-input addresses with nearest predefined locations
 
 ## Forecast model
-For preprocessing, we streamlined the dataset by removing unnecessary columns and renaming the date and target columns, along with adjusting the data types. We employed logistic regression and specified a saturating mininum. This stabilized forecasted values as they approached the limits over time. When forecasted values fell below zero, we adjusted forecasts to zero to maintain logical consistency.
-
-For model optimization, we focused on tuning changepoint prior scale parameter through cross-validation. We implemented grid search to identify the parameter setting that minimized RMSE, treating each bird and county independently. To efficiently execute this process, we developed a function that tests all potential parameters for a given bird-county pair. We leveraged Python’s `multiprocessing` library, specifically the `Pool` object, to facilitate parallel testing of these combinations, enhancing the speed and efficiency of our parameter tuning efforts.
-
-We evaluated our model's performance using RMSE and MAE metrics.
-
-
-## Code structure for forecast model
+### Code structure for forecast model
 ```bash
 ├── cleaned data
 │   ├── allbirds_detection.feather
@@ -51,26 +44,35 @@ We evaluated our model's performance using RMSE and MAE metrics.
 │   ├── Final Report - Phase 2.docx
 ```
 
+### Model training
+To predict weekly bird detection rates, we tested several statistical and machine learning time series forecasting models on a subset of data (50 species/ 700 models). After evaluating their performance and scalability, we narrowed our selection to Prophet and Greykite, with Greykite outperforming in overall efficacy.  Prophet is a specialized time series forecasting model that decomposes time series data into trend, seasonality, and other components and combines them in an additive model. Greykite uses a hybrid forecasting model that can incorporate a wide range of forecasting techniques to handle diverse time series data. 
+
+We further fine-tuned both models using parameter tuning via grid search, cross-validation, and parallel processing. After evaluating their performance and processing speed, we selected Prophet as the more efficient method to extend our forecasts to all bird species. 
+
+We employed logistic regression and specified a saturating mininum. This stabilized forecasted values as they approached the limits over time. When forecasted values fell below zero, we adjusted forecasts to zero to maintain logical consistency.
+
+For model optimization, we focused on tuning changepoint prior scale parameter through cross-validation. We implemented grid search to identify the parameter setting that minimized RMSE, treating each bird and county independently. To efficiently execute this process, we developed a function that tests all potential parameters for a given bird-county pair. We leveraged Python’s `multiprocessing` library, specifically the `Pool` object, to facilitate parallel testing of these combinations, enhancing the speed and efficiency of our parameter tuning efforts.
+Specific details on hyperparameter tuning and parallel processing are in the Final Report - Phase 2.docx document.
+
+We evaluated our models' performance using RMSE and MAE metrics.
+
+### Result 
+![image](https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/407ea991-a4c9-49d8-9280-734b475cc556)
 
 
-## Result 
+## Tableau dashboard
 
-### Forecast model evaluation 
-
-### Tableau dashboard
-
-### Birding activity analysis
-
-## Future work
-
-# Demo:
-
+## Birding activity analysis
 Voila - Binder link: https://mybinder.org/v2/gh/nhathpham/Bird-Watching-Recommendation-System/main?labpath=%2Fvoila%2Frender%2FactivityMaps_1129.ipynb
 - Voilà turns Jupyter notebooks into standalone web applications. 
 Jupyter notebook - Binder link: 
-
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nhathpham/Bird-Watching-Recommendation-System/main?urlpath=voila%2Frender%2FactivityMaps_1129.ipynb)
 
+
+## Pipeline for yearly data updates
+1. Download new data from eBird [eBird data](https://ebird.org/data/download)
+2. Run data_cleaning.R and data_finalpreprocessing.py to prepare new data
+3. Run detection_forecast_model.py on the prepared data to retrain model and get new forecast results
 
 # Packages Used
 - Facebook's Prophet forecasting package
@@ -79,6 +81,4 @@ Jupyter notebook - Binder link:
 
 # How to run:
 1. Clone this repo
-2. Download the [eBird data](https://ebird.org/data/download)
-3. Run `detection_newdata.py` to prepare the data
-4. Run `cleaned_bird_model.py` on the prepared data to get forecast results
+
