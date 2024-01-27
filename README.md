@@ -58,7 +58,7 @@ We evaluated our models' performance using RMSE and MAE metrics.
 
 ### Result 
 ![image](https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/407ea991-a4c9-49d8-9280-734b475cc556)
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/407ea991-a4c9-49d8-9280-734b475cc556" width="200">
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/407ea991-a4c9-49d8-9280-734b475cc556" width="500">
 
 
 ## Tableau dashboard
