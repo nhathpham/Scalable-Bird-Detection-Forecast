@@ -69,7 +69,7 @@ We evaluated our models' performance using RMSE and MAE metrics.
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/57f1377e-cc21-4d41-a087-a51bb13b1b55" width="550">
 
 
-**4/ Model performance varies across species
+**4/ Model performance varies across species**
 
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2f03f4bb-0ba2-46f1-86cd-9f73eee91743" width="400">
 
@@ -105,7 +105,3 @@ Jupyter notebook - Binder link:
 - Facebook's Prophet forecasting package
 - Numpy
 - Pandas
-
-# How to run:
-1. Clone this repo
-
