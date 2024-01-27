@@ -58,13 +58,19 @@ We evaluated our models' performance using RMSE and MAE metrics.
 
 ### Result 
 **1/ Total runtime** (6510 models): 1 hr 30 min, 11.6 seconds/ species
+
 **2/ Satisfactory accuracy**
+
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/989b45ef-74f1-42f5-bd85-00f2e07049e0" width="400">
 
-**3/ Model performance varies across counties**
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/57f1377e-cc21-4d41-a087-a51bb13b1b55" width="400">
 
-**4/ Model performance varies across species**
+**3/ Model performance varies across counties**
+
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/57f1377e-cc21-4d41-a087-a51bb13b1b55" width="500">
+
+
+**4/ Model performance varies across species
+
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2f03f4bb-0ba2-46f1-86cd-9f73eee91743" width="500">
 
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/825272a9-c312-415b-8b96-cd9378637aaf" width="500">
