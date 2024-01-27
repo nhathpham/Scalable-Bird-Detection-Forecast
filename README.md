@@ -57,8 +57,27 @@ Specific details on hyperparameter tuning and parallel processing are in the Fin
 We evaluated our models' performance using RMSE and MAE metrics.
 
 ### Result 
-![image](https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/407ea991-a4c9-49d8-9280-734b475cc556)
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/407ea991-a4c9-49d8-9280-734b475cc556" width="400">
+**1/ Total runtime** (6510 models): 1 hr 30 min, 11.6 seconds/ species
+**2/ Satisfactory accuracy**
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/989b45ef-74f1-42f5-bd85-00f2e07049e0" width="400">
+
+**3/ Model performance varies across counties**
+![image](https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/57f1377e-cc21-4d41-a087-a51bb13b1b55)
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/57f1377e-cc21-4d41-a087-a51bb13b1b55" width="700">
+
+**4/ Model performance varies across species**
+![image](https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2f03f4bb-0ba2-46f1-86cd-9f73eee91743)
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2f03f4bb-0ba2-46f1-86cd-9f73eee91743" width="700">
+
+![image](https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/825272a9-c312-415b-8b96-cd9378637aaf)
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/825272a9-c312-415b-8b96-cd9378637aaf" width="700">
+
+![image](https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/cacc31d8-2148-4c81-a5ba-b8dd1ad24cb2)
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/cacc31d8-2148-4c81-a5ba-b8dd1ad24cb2" width="700">
+
+![image](https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2710d9ba-ff8b-443f-8260-4f48da65fe5b)
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2710d9ba-ff8b-443f-8260-4f48da65fe5b" width="700">
+
 
 
 ## Tableau dashboard
@@ -68,6 +87,7 @@ Voila - Binder link: https://mybinder.org/v2/gh/nhathpham/Bird-Watching-Recommen
 - Voilà turns Jupyter notebooks into standalone web applications. 
 Jupyter notebook - Binder link: 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nhathpham/Bird-Watching-Recommendation-System/main?urlpath=voila%2Frender%2FactivityMaps_1129.ipynb)
+
 
 
 ## Pipeline for yearly data updates
