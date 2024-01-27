@@ -82,10 +82,13 @@ We evaluated our models' performance using RMSE and MAE metrics.
 
 
 ## Tableau dashboard
-https://tabsoft.co/3uFSm5S
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/eac47e0e-d595-4788-8626-d8c3013abbc4" width="550">
+
+Access the dashboard here: https://tabsoft.co/3uFSm5S
+
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/eac47e0e-d595-4788-8626-d8c3013abbc4" width="600">
 
 ## Birding activity analysis
+
 Voila - Binder link: https://mybinder.org/v2/gh/nhathpham/Bird-Watching-Recommendation-System/main?labpath=%2Fvoila%2Frender%2FactivityMaps_1129.ipynb
 - Voilà turns Jupyter notebooks into standalone web applications. 
 Jupyter notebook - Binder link: 
