@@ -66,18 +66,18 @@ We evaluated our models' performance using RMSE and MAE metrics.
 
 **3/ Model performance varies across counties**
 
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/57f1377e-cc21-4d41-a087-a51bb13b1b55" width="500">
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/57f1377e-cc21-4d41-a087-a51bb13b1b55" width="550">
 
 
 **4/ Model performance varies across species
 
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2f03f4bb-0ba2-46f1-86cd-9f73eee91743" width="500">
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2f03f4bb-0ba2-46f1-86cd-9f73eee91743" width="400">
 
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/825272a9-c312-415b-8b96-cd9378637aaf" width="500">
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/825272a9-c312-415b-8b96-cd9378637aaf" width="400">
 
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/cacc31d8-2148-4c81-a5ba-b8dd1ad24cb2" width="500">
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/cacc31d8-2148-4c81-a5ba-b8dd1ad24cb2" width="400">
 
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2710d9ba-ff8b-443f-8260-4f48da65fe5b" width="500">
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2710d9ba-ff8b-443f-8260-4f48da65fe5b" width="400">
 
 
 
