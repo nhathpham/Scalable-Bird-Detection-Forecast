@@ -107,10 +107,13 @@ Access the dashboard here: https://tabsoft.co/3uFSm5S
 
 ## Birding activity analysis
 
-Voila - Binder link: https://mybinder.org/v2/gh/nhathpham/Bird-Watching-Recommendation-System/main?labpath=%2Fvoila%2Frender%2FactivityMaps_1129.ipynb
-- Voilà turns Jupyter notebooks into standalone web applications. 
-Jupyter notebook - Binder link: 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nhathpham/Bird-Watching-Recommendation-System/main?urlpath=voila%2Frender%2FactivityMaps_1129.ipynb)
+This analysis aims to find less-known and heavily frequented birding spots, helping birders discover new locations and balance environmental impact. Using 2022 eBird records, we divided the state into 8x8km grid cells and assessed popularity and diversity with key metrics. 
+
+We created interactive maps to visualize the findings, currently hosted on Binder, with plans to improve speed and explore alternative hosting solutions.
+
+Explore Maps:
+- Demo Video: https://www.youtube.com/watch?v=tGmr9RT5qmY
+- Interactive Maps (performance issues; we're exploring alternative hosting options): https://mybinder.org/v2/gh/nhathpham/Scalable-Bird-Detection-Forecast/main?labpath=voila%2Frender%2Factivity_maps.ipynb
 
 
 
