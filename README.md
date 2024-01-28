@@ -20,6 +20,9 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 - *Checklist data*: aggregates observations for each specific birding trip, summarizing total species count, location, date, time, and participant count.
 - Given the inadequacy of eBird's API for detailed analyses, we opted for website data download over API calls.
 
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/e2bd4c7c-288c-49e4-80d2-e1f59a3e2ee3" width="400">
+
+
 #### Others
 - American Birding Association’s 2023 and Massachusetts Avian Records Committee’s species list
 - NCEI: for temperature and precipitation data. Incorporation into the forecast model as environmental regressors yielded no improvement observed, hence not included in the final model.
