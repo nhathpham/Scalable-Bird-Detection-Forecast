@@ -49,7 +49,7 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 ```
 
 ### Model training
-**Algorithm selection:**
+**1. Algorithm selection:**
 - *Initial testing*: evaluated several time series forecasting models on a sample of 50 species (700 models). Narrowed down options to Prophet and Silverkite for performance and scalability
 - *Comparison Silverkite and Prophet*:
   + Both accept similar time series data and provide options for customizing seasonality, holidays, trend handling, and hyperparameter tuning. 
@@ -59,43 +59,45 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 - *Fine-tune both models* using parameter tuning via grid search, cross-validation, and parallel processing.
 - *Final choice*: Prophet due to efficiency for broader forecasting.
 
-**Final Prophet model:**
+**2. Final Prophet model:**
 - Employ logistic growth for a saturating minimum, stabilizing values near limits
 - Predict zero for forecasted values below zero for logical consistency.
   
-**Optimization:**
+**3. Optimization:**
 - Focus on tuning the changepoint prior scale parameter.
 - Implement grid search with RMSE minimization for each bird-county pair.
 - Develop a function for testing parameters within a multiprocessing.Pool object for parallel processing and efficiency.
 
 Please refer to Final Report - Phase 2.docx for hyperparameter tuning and parallel processing details.
 
+**4. Evaluation:** Models' performance was evaluated using RMSE and MAE metrics.
+
 ### Result 
-**1/ Total runtime** (6510 models): 1 hr 30 min, 11.6 seconds/ species
+**1. Total runtime** (6510 models): 1 hr 30 min, 11.6 seconds/ species
 
-**2/ Satisfactory accuracy**
-Models' performance was evaluated using RMSE and MAE metrics.
-
+**2. Satisfactory accuracy**
 
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/989b45ef-74f1-42f5-bd85-00f2e07049e0" width="400">
 
 
-**3/ Model performance varies across counties**
+**3. Model performance varies across counties**
 
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/57f1377e-cc21-4d41-a087-a51bb13b1b55" width="550">
 
 
-**4/ Model performance varies across species**
+**4 Model performance varies across species**
+- High predictive accuracy for migratory birds because of pronounced seasonal patterns
 
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2f03f4bb-0ba2-46f1-86cd-9f73eee91743" width="400">
 
+- Lower predictive accuracy for resident birds due to variable detection patterns, underreporting, complex behaviors
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/825272a9-c312-415b-8b96-cd9378637aaf" width="400">
 
+- Captures seasonality and trends well, especially changes that occur gradually; struggles with abrupt fluctuations
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/cacc31d8-2148-4c81-a5ba-b8dd1ad24cb2" width="400">
 
+- Performs well with elusive, hard-to-detect species (falcons, owls)
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2710d9ba-ff8b-443f-8260-4f48da65fe5b" width="400">
-
-
 
 ## Tableau dashboard
 
@@ -117,7 +119,3 @@ Jupyter notebook - Binder link:
 2. Run data_cleaning.R and data_finalpreprocessing.py to prepare new data
 3. Run detection_forecast_model.py on the prepared data to retrain model and get new forecast results
 
-# Packages Used
-- Facebook's Prophet forecasting package
-- Numpy
-- Pandas
