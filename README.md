@@ -114,7 +114,7 @@ Explore Maps:
 
 ## User Feedback & Future Work
 - Some feedback from users on the dashboard:
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/5bcd2bcf-5f7a-40f9-9204-d8403bfabaf0" width="400">
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/5bcd2bcf-5f7a-40f9-9204-d8403bfabaf0" width="550">
 
 - Explore model scaling through species clustering and hierarchical modeling
 - Integrate habitat and weather data to improve forecast models
