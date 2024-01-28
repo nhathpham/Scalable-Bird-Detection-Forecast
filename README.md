@@ -100,8 +100,8 @@ Please refer to Final Report - Phase 2.docx for hyperparameter tuning and parall
 
 ## Tableau dashboard
 
-Access the dashboard [**here**](https://tabsoft.co/3uFSm5S)
-
+- Access the dashboard [**here**](https://tabsoft.co/3uFSm5S)
+- [Demo Video](https://www.youtube.com/watch?v=tr-RAk1-CeE)
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/eac47e0e-d595-4788-8626-d8c3013abbc4" width="600">
 
 ## Birding activity analysis
