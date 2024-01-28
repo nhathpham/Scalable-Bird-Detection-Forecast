@@ -18,7 +18,7 @@ Throughout the project, we actively engage with birdwatchers and conservationist
 - Dataset comprises observation and checklist data; observation rows detail individual bird sightings, including species, location, date, time, and notes. Checklist data aggregates observations for specific outings, summarizing total species count, location, date, time, and participant count.
 - Given the inadequacy of eBird's API for detailed analyses, we opted for website data download over API calls.
 
-#### Other
+#### Others
 - NCEI: for temperature and precipitation data. Incorporation into the forecast model as environmental regressors yielded no improvement observed, likely due to mismatched units (monthly temperature data vs. weekly detection rate data); not included in the final model.
 - American Birding Association’s 2023 species checklist and Massachusetts Avian Records Committee’s birds-in-review list: for uncommon bird species, supporting the birding activity analysis
   
@@ -45,21 +45,27 @@ Throughout the project, we actively engage with birdwatchers and conservationist
 ```
 
 ### Model training
-To predict weekly bird detection rates, we tested several statistical and machine learning time series forecasting models on a subset of data (50 species/ 700 models). After evaluating their performance and scalability, we narrowed our selection to Prophet and Greykite, with Greykite outperforming in overall efficacy.  Prophet is a specialized time series forecasting model that decomposes time series data into trend, seasonality, and other components and combines them in an additive model. Greykite uses a hybrid forecasting model that can incorporate a wide range of forecasting techniques to handle diverse time series data. 
+To predict weekly detection rates for each species in each county, we tested several time series forecasting models on a subset of data (50 species/ 700 models). After evaluating their performance and scalability, we narrowed our selection to Prophet (developed by Facebook) and Silverkite (developed by LinkedIn). Both algorithms accept similar time series data and provide options for customizing seasonality, holidays, trend handling, and hyperparameter tuning. Whereas Prophet uses a Bayesian approach to fit a model, Silverkite uses more traditional models such as a ridge, elastic net, and boosted trees. Both can model linear growth, but only Silverkite can handle square root and quadratic growth, while only Prophet can model logistic growth.
 
 We further fine-tuned both models using parameter tuning via grid search, cross-validation, and parallel processing. After evaluating their performance and processing speed, we selected Prophet as the more efficient method to extend our forecasts to all bird species. 
 
-We employed logistic regression and specified a saturating mininum. This stabilized forecasted values as they approached the limits over time. When forecasted values fell below zero, we adjusted forecasts to zero to maintain logical consistency.
+Final Prophet model:
+- Employ logistic growth for a saturating minimum, stabilizing values near limits
+- Predict zero for forecasted values below zero for logical consistency.
+  
+Optimization:
+- Focus on tuning the changepoint prior scale parameter.
+- Implement grid search with RMSE minimization for each bird-county pair.
+- Develop a function for testing parameters within a multiprocessing.Pool object for parallel processing and efficiency.
 
-For model optimization, we focused on tuning changepoint prior scale parameter through cross-validation. We implemented grid search to identify the parameter setting that minimized RMSE, treating each bird and county independently. To efficiently execute this process, we developed a function that tests all potential parameters for a given bird-county pair. We leveraged Python’s `multiprocessing` library, specifically the `Pool` object, to facilitate parallel testing of these combinations, enhancing the speed and efficiency of our parameter tuning efforts.
-Specific details on hyperparameter tuning and parallel processing are in the Final Report - Phase 2.docx document.
-
-We evaluated our models' performance using RMSE and MAE metrics.
+Please refer to Final Report - Phase 2.docx for hyperparameter tuning and parallel processing details.
 
 ### Result 
 **1/ Total runtime** (6510 models): 1 hr 30 min, 11.6 seconds/ species
 
 **2/ Satisfactory accuracy**
+Models' performance was evaluated using RMSE and MAE metrics.
+
 
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/989b45ef-74f1-42f5-bd85-00f2e07049e0" width="400">
 
