@@ -5,7 +5,7 @@
 
 ## Project Overview
 
-Our project aims to address the challenges faced by enthusiasts, conservationists, and researchers in planning effective bird-watching trips, particularly for beginners. 
+Our project aims to create a tool to help bird enthusiasts, conservationists, and researchers in planning effective bird-watching trips, particularly for beginners. 
 
 We build accurate and scalable times series models to forecast weekly detection rates of 465 species in each of 14 MA counties. We also provide recommendations for optimal locations and times through descriptive analysis. The results are presented on an interactive Tableau dashboard for user-friendly trip planning.
 
