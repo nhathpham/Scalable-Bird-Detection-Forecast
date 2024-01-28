@@ -5,7 +5,8 @@
 
 ## Project Overview
 
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/a0cc4d69-a413-4f81-bf23-51cd6c03a762" width="400">
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/a0cc4d69-a413-4f81-bf23-51cd6c03a762" width="300">
+
 
 This project aims to create a tool to help bird enthusiasts, conservationists, and researchers in planning effective bird-watching trips, particularly for beginners. 
 
