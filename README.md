@@ -45,15 +45,21 @@ Throughout the project, we actively engage with birdwatchers and conservationist
 ```
 
 ### Model training
-To predict weekly detection rates for each species in each county, we tested several time series forecasting models on a subset of data (50 species/ 700 models). After evaluating their performance and scalability, we narrowed our selection to Prophet (developed by Facebook) and Silverkite (developed by LinkedIn). Both algorithms accept similar time series data and provide options for customizing seasonality, holidays, trend handling, and hyperparameter tuning. Whereas Prophet uses a Bayesian approach to fit a model, Silverkite uses more traditional models such as a ridge, elastic net, and boosted trees. Both can model linear growth, but only Silverkite can handle square root and quadratic growth, while only Prophet can model logistic growth.
+**Algorithm selection:**
+- Initial testing: evaluated several time series forecasting models on a sample of 50 species (700 models). Narrowed down options to Prophet and Silverkite for performance and scalability
+- Comparison Silverkite and Prophet:
+  + Both accept similar time series data and provide options for customizing seasonality, holidays, trend handling, and hyperparameter tuning. 
+  + Prophet uses a Bayesian approach to fit a model
+  + Silverkite uses more traditional models such as a ridge, elastic net, and boosted trees
+  + Both can model linear growth. Only Silverkite can handle square root and quadratic growth, while only Prophet can model logistic growth.
+- Fine-tune both models using parameter tuning via grid search, cross-validation, and parallel processing.
+- Final Choice: Prophet due to efficiency for broader forecasting.
 
-We further fine-tuned both models using parameter tuning via grid search, cross-validation, and parallel processing. After evaluating their performance and processing speed, we selected Prophet as the more efficient method to extend our forecasts to all bird species. 
-
-Final Prophet model:
+**Final Prophet model:**
 - Employ logistic growth for a saturating minimum, stabilizing values near limits
 - Predict zero for forecasted values below zero for logical consistency.
   
-Optimization:
+**Optimization:**
 - Focus on tuning the changepoint prior scale parameter.
 - Implement grid search with RMSE minimization for each bird-county pair.
 - Develop a function for testing parameters within a multiprocessing.Pool object for parallel processing and efficiency.
