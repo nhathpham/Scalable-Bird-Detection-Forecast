@@ -113,9 +113,10 @@ Explore Maps:
 - [Interactive Maps](https://mybinder.org/v2/gh/nhathpham/Scalable-Bird-Detection-Forecast/main?labpath=voila%2Frender%2Factivity_maps.ipynb) (performance issues; we're exploring alternative hosting options)
 
 ## User Feedback & Future Work
-- Some feedback from users on the dashboard:
+**Some feedback from users on the dashboard**
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/5bcd2bcf-5f7a-40f9-9204-d8403bfabaf0" width="550">
 
+**Next steps**
 - Explore model scaling through species clustering and hierarchical modeling
 - Integrate habitat and weather data to improve forecast models
 - Upgrade infrastructure using cloud solutions and develop a Flask app for centralized tool access
