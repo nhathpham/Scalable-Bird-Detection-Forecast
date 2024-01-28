@@ -7,15 +7,15 @@
 
 Our project aims to create a tool to help bird enthusiasts, conservationists, and researchers in planning effective bird-watching trips, particularly for beginners. 
 
-We build accurate and scalable times series models to forecast weekly detection rates of 465 species in each of 14 MA counties. We also provide recommendations for optimal locations and times through descriptive analysis. The results are presented on an interactive Tableau dashboard for user-friendly trip planning.
+We build accurate and scalable times series models to forecast weekly detection rates of 465 species in each of 14 Massachussetts (MA) counties. We also provide recommendations for optimal locations and times through descriptive analysis. The results are presented on an interactive Tableau dashboard for user-friendly trip planning.
 
-Throughout the project, we actively engaged with birdwatchers and conservationists across Massachussetts to understand their needs, obtain knowledge on birding practices, and gather feedback for development iterations.
+Throughout the project, we actively engaged with birdwatchers and conservationists across MA to understand their needs, obtain knowledge on birding practices, and gather feedback for development iterations.
 
 ## Data
 ### Source & Acquisition
 #### eBird
 - A citizen science project from Cornell Lab of Ornithology (ebird.org/data) comprising global bird sightings by bird watchers
-- We conducted a survey among Massachusetts (MA) birders (102 responses), revealing 83% prefer regular or nearby locations, guiding our exclusive focus on MA.
+- We conducted a survey among MA birders (102 responses), revealing 83% prefer regular or nearby locations, guiding our exclusive focus on MA.
 - Extracted 8.5GB of MA bird sighting data from eBird.org (2013-2022).
 - Dataset comprises observation and checklist data:
   + *Observation data*: individual bird sightings, including species, location, date, time, and notes
@@ -29,7 +29,7 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 
 ### Data processing
 - Use R's 'auk' package designed for eBird data. Only complete checklists were included, with refinement by restricting checklist duration, distances, speeds, and group sizes.
--  Group bird sightings by county and aggregated into weekly intervals.
+- Group bird sightings by county and aggregated into weekly intervals.
 - Assign null detection rates to weeks with fewer than 5 checklists to maintain time series continuity for uninterrupted data sequences.
 - Additional processing on location data uses KDTree algorithm and geodesic package for pairing user-input addresses with nearest predefined locations
 
