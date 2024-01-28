@@ -13,8 +13,10 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 
 https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/c1987d32-a617-4d3e-9fc4-51b07b5986be" width="200"
 
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/b27d2e65-08a0-4842-8d2a-852f6b598f7b" width="200">
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/a0cc4d69-a413-4f81-bf23-51cd6c03a762" width="400">
 
+
+https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/b27d2e65-08a0-4842-8d2a-852f6b598f7b
 ## Data
 ### 1. Source & Acquisition
 #### eBird
