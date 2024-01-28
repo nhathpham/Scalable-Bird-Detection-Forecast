@@ -5,18 +5,14 @@
 
 ## Project Overview
 
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/a0cc4d69-a413-4f81-bf23-51cd6c03a762" width="400">
+
 This project aims to create a tool to help bird enthusiasts, conservationists, and researchers in planning effective bird-watching trips, particularly for beginners. 
 
 We built accurate and scalable times series models to forecast weekly detection rates of 465 species in each of 14 Massachussetts (MA) counties. We also provided recommendations for optimal locations and times through descriptive analysis. Results are presented on an interactive Tableau dashboard.
 
 Throughout the project, we actively engaged with birdwatchers and conservationists across MA to understand their needs, obtain knowledge on birding practices, and gather feedback for development iterations.
 
-https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/c1987d32-a617-4d3e-9fc4-51b07b5986be" width="200"
-
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/a0cc4d69-a413-4f81-bf23-51cd6c03a762" width="400">
-
-
-https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/b27d2e65-08a0-4842-8d2a-852f6b598f7b
 ## Data
 ### 1. Source & Acquisition
 #### eBird
