@@ -5,28 +5,32 @@
 
 ## Project Overview
 
-Our bird-watching project aims to address the challenges faced by enthusiasts, conservationists, and researchers in planning effective bird-watching excursions, particularly for beginners. We build accurate and scalable times series models to forecast weekly detection rates of 465 species in 14 MA counties and provide recommendations for optimal bird-watching spots and times. The results are presented on an interactive Tableau dashboard for user-friendly trip planning.
+Our project aims to address the challenges faced by enthusiasts, conservationists, and researchers in planning effective bird-watching trips, particularly for beginners. 
 
-Throughout the project, we actively engage with birdwatchers and conservationists across Massachussetts to understand their needs, obtain knowledge on birding practices, and gather feedback for development iterations.
+We build accurate and scalable times series models to forecast weekly detection rates of 465 species in each of 14 MA counties. We also provide recommendations for optimal locations and times through descriptive analysis. The results are presented on an interactive Tableau dashboard for user-friendly trip planning.
+
+Throughout the project, we actively engaged with birdwatchers and conservationists across Massachussetts to understand their needs, obtain knowledge on birding practices, and gather feedback for development iterations.
 
 ## Data
 ### Source & Acquisition
 #### eBird
-- Utilize eBird dataset from Cornell Lab of Ornithology (ebird.org/data) comprising global bird sightings by professional and amateur bird watchers (Cornell, 2023).
-- Conducted a survey among Massachusetts (MA) birders (102 responses), revealing 83% prefer regular or nearby locations (Appendix Figure A1), guiding our exclusive focus on MA.
+- A citizen science project from Cornell Lab of Ornithology (ebird.org/data) comprising global bird sightings by bird watchers
+- We conducted a survey among Massachusetts (MA) birders (102 responses), revealing 83% prefer regular or nearby locations, guiding our exclusive focus on MA.
 - Extracted 8.5GB of MA bird sighting data from eBird.org (2013-2022).
-- Dataset comprises observation and checklist data; observation rows detail individual bird sightings, including species, location, date, time, and notes. Checklist data aggregates observations for specific outings, summarizing total species count, location, date, time, and participant count.
+- Dataset comprises observation and checklist data:
+  + *Observation data*: individual bird sightings, including species, location, date, time, and notes
+  + *Checklist data*: aggregates observations for each specific birding trip, summarizing total species count, location, date, time, and participant count.
 - Given the inadequacy of eBird's API for detailed analyses, we opted for website data download over API calls.
 
 #### Others
-- NCEI: for temperature and precipitation data. Incorporation into the forecast model as environmental regressors yielded no improvement observed, likely due to mismatched units (monthly temperature data vs. weekly detection rate data); not included in the final model.
 - American Birding Association’s 2023 species checklist and Massachusetts Avian Records Committee’s birds-in-review list: for uncommon bird species, supporting the birding activity analysis
+- NCEI: for temperature and precipitation data. Incorporation into the forecast model as environmental regressors yielded no improvement observed, hence not included in the final model.
   
 
 ### Data processing
-- Initial data cleaning and filtering used the 'auk' package in R, designed for eBird data. Only complete checklists were included, with refinement by restricting checklist duration, distances, speeds, and group sizes.
-- Group bird sightings by county and aggregated into weekly intervals.
-- Null detection rates were assigned to weeks with fewer than 5 checklists to maintain time series continuity for uninterrupted data sequences.
+- Use R's 'auk' package designed for eBird data. Only complete checklists were included, with refinement by restricting checklist duration, distances, speeds, and group sizes.
+-  Group bird sightings by county and aggregated into weekly intervals.
+- Assign null detection rates to weeks with fewer than 5 checklists to maintain time series continuity for uninterrupted data sequences.
 - Additional processing on location data uses KDTree algorithm and geodesic package for pairing user-input addresses with nearest predefined locations
 
 ## Forecast model
@@ -46,14 +50,14 @@ Throughout the project, we actively engage with birdwatchers and conservationist
 
 ### Model training
 **Algorithm selection:**
-- Initial testing: evaluated several time series forecasting models on a sample of 50 species (700 models). Narrowed down options to Prophet and Silverkite for performance and scalability
-- Comparison Silverkite and Prophet:
+- *Initial testing*: evaluated several time series forecasting models on a sample of 50 species (700 models). Narrowed down options to Prophet and Silverkite for performance and scalability
+- *Comparison Silverkite and Prophet*:
   + Both accept similar time series data and provide options for customizing seasonality, holidays, trend handling, and hyperparameter tuning. 
   + Prophet uses a Bayesian approach to fit a model
   + Silverkite uses more traditional models such as a ridge, elastic net, and boosted trees
   + Both can model linear growth. Only Silverkite can handle square root and quadratic growth, while only Prophet can model logistic growth.
-- Fine-tune both models using parameter tuning via grid search, cross-validation, and parallel processing.
-- Final Choice: Prophet due to efficiency for broader forecasting.
+- *Fine-tune both models* using parameter tuning via grid search, cross-validation, and parallel processing.
+- *Final choice*: Prophet due to efficiency for broader forecasting.
 
 **Final Prophet model:**
 - Employ logistic growth for a saturating minimum, stabilizing values near limits
