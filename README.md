@@ -11,7 +11,7 @@ We built accurate and scalable times series models to forecast weekly detection 
 
 Throughout the project, we actively engaged with birdwatchers and conservationists across MA to understand their needs, obtain knowledge on birding practices, and gather feedback for development iterations.
 
-<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/c1987d32-a617-4d3e-9fc4-51b07b5986be" width="400">
+<img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/c1987d32-a617-4d3e-9fc4-51b07b5986be" width="200">
 
 ## Data
 ### 1. Source & Acquisition
