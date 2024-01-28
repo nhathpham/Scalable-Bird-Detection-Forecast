@@ -10,7 +10,7 @@
 
 This project aims to create a tool to help bird enthusiasts, conservationists, and researchers in planning effective bird-watching trips, particularly for beginners. 
 
-We built accurate and scalable times series models to forecast weekly detection rates of 465 species in each of 14 Massachussetts (MA) counties. We also provided recommendations for optimal locations and times through descriptive analysis. Results are presented on an interactive Tableau dashboard.
+We built accurate and scalable times series models to forecast weekly detection rates of 465 species in each of 14 Massachussetts (MA) counties, and recommendations for optimal locations and times through descriptive analysis. Results are presented on an interactive Tableau dashboard.
 
 Throughout the project, we actively engaged with birdwatchers and conservationists across MA to understand their needs, obtain knowledge on birding practices, and gather feedback for development iterations.
 
