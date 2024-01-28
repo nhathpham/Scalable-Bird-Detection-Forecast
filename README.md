@@ -25,7 +25,7 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 
 #### Others
 - American Birding Association’s 2023 and Massachusetts Avian Records Committee’s species list
-- NCEI: for temperature and precipitation data. Incorporation into the forecast model as environmental regressors yielded no improvement observed, hence not included in the final model.
+- NCEI: for temperature and precipitation data. Incorporation into the forecast model as environmental regressors yielded no improvement, hence excluded from final model.
   
 
 ### 2. Data processing
