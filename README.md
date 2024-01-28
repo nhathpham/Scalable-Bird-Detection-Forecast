@@ -129,7 +129,7 @@ Explore Maps:
 - Upgrade infrastructure using cloud solutions and develop a Flask app for centralized tool access
 
 ## Pipeline for (yearly) model updates 
-1. Download new data from eBird [eBird data](https://ebird.org/data/download)
+1. Download new data from [eBird data](https://ebird.org/data/download)
 2. Run data_cleaning.R and data_finalpreprocessing.py to prepare new data
 3. Run detection_forecast_model.py on the prepared data to retrain model and get new forecast results
 4. Manually load new forecast results into Tableau
