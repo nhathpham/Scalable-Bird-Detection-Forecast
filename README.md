@@ -22,7 +22,7 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 - Given the inadequacy of eBird's API for detailed analyses, we opted for website data download over API calls.
 
 #### Others
-- American Birding Association’s 2023 species checklist and Massachusetts Avian Records Committee’s birds-in-review list: for uncommon bird species, supporting the birding activity analysis
+- American Birding Association’s 2023 and Massachusetts Avian Records Committee’s species list
 - NCEI: for temperature and precipitation data. Incorporation into the forecast model as environmental regressors yielded no improvement observed, hence not included in the final model.
   
 
