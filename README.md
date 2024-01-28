@@ -17,7 +17,7 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 - A citizen science project from Cornell Lab of Ornithology comprising global bird sightings by bird watchers
 - Our survey with 102 MA birders showed an 83% preference for local locations, leading to our exclusive focus on the state. We extracted 8.5GB of bird sighting data from eBird.org (2013-2022).
 - *Observation data*: individual bird sightings, including species, location, date, time, and notes
-- *Checklist data*: aggregates observations for each specific birding trip, summarizing total species count, location, date, time, and participant count.
+- *Checklist data*: aggregates observations for each specific birding trip: total species count, location, date, time, and participant count
 - Given the inadequacy of eBird's API for detailed analyses, we opted for website data download over API calls.
 
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/e2bd4c7c-288c-49e4-80d2-e1f59a3e2ee3" width="400">
