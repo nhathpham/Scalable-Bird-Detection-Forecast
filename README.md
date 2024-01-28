@@ -14,11 +14,10 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 ## Data
 ### 1. Source & Acquisition
 #### eBird
-- A citizen science project from Cornell Lab of Ornithology (ebird.org/data) comprising global bird sightings by bird watchers
-- Surveying 102 Massachusetts birders showed an 83% preference for local locations, leading to our exclusive focus on the state. We extracted 8.5GB of bird sighting data from eBird.org (2013-2022).
-- Dataset comprises observation and checklist data:
-  + *Observation data*: individual bird sightings, including species, location, date, time, and notes
-  + *Checklist data*: aggregates observations for each specific birding trip, summarizing total species count, location, date, time, and participant count.
+- A citizen science project from Cornell Lab of Ornithology comprising global bird sightings by bird watchers
+- Our survey with 102 MA birders showed an 83% preference for local locations, leading to our exclusive focus on the state. We extracted 8.5GB of bird sighting data from eBird.org (2013-2022).
+- *Observation data*: individual bird sightings, including species, location, date, time, and notes
+- *Checklist data*: aggregates observations for each specific birding trip, summarizing total species count, location, date, time, and participant count.
 - Given the inadequacy of eBird's API for detailed analyses, we opted for website data download over API calls.
 
 #### Others
