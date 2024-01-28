@@ -100,7 +100,7 @@ Please refer to Final Report - Phase 2.docx for hyperparameter tuning and parall
 
 ## Tableau dashboard
 
-Access the dashboard here: https://tabsoft.co/3uFSm5S
+Access the dashboard [**here**](https://tabsoft.co/3uFSm5S)
 
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/eac47e0e-d595-4788-8626-d8c3013abbc4" width="600">
 
@@ -111,8 +111,8 @@ This analysis aims to find less-known and heavily frequented birding spots, help
 We created interactive maps to visualize the findings, currently hosted on Binder, with plans to improve speed and explore alternative hosting solutions.
 
 Explore Maps:
-- Demo Video: https://www.youtube.com/watch?v=tGmr9RT5qmY
-- Interactive Maps (performance issues; we're exploring alternative hosting options): https://mybinder.org/v2/gh/nhathpham/Scalable-Bird-Detection-Forecast/main?labpath=voila%2Frender%2Factivity_maps.ipynb
+- [Demo Video](https://www.youtube.com/watch?v=tGmr9RT5qmY)
+- [Interactive Maps](https://mybinder.org/v2/gh/nhathpham/Scalable-Bird-Detection-Forecast/main?labpath=voila%2Frender%2Factivity_maps.ipynb) (performance issues; we're exploring alternative hosting options)
 
 
 
