@@ -12,7 +12,7 @@ We build accurate and scalable times series models to forecast weekly detection 
 Throughout the project, we actively engaged with birdwatchers and conservationists across MA to understand their needs, obtain knowledge on birding practices, and gather feedback for development iterations.
 
 ## Data
-### Source & Acquisition
+### 1. Source & Acquisition
 #### eBird
 - A citizen science project from Cornell Lab of Ornithology (ebird.org/data) comprising global bird sightings by bird watchers
 - We conducted a survey among MA birders (102 responses), revealing 83% prefer regular or nearby locations, guiding our exclusive focus on MA.
@@ -27,14 +27,14 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 - NCEI: for temperature and precipitation data. Incorporation into the forecast model as environmental regressors yielded no improvement observed, hence not included in the final model.
   
 
-### Data processing
+### 2. Data processing
 - Use R's 'auk' package designed for eBird data. Only complete checklists were included, with refinement by restricting checklist duration, distances, speeds, and group sizes.
 - Group bird sightings by county and aggregated into weekly intervals.
 - Assign null detection rates to weeks with fewer than 5 checklists to maintain time series continuity for uninterrupted data sequences.
 - Additional processing on location data uses KDTree algorithm and geodesic package for pairing user-input addresses with nearest predefined locations
 
 ## Forecast model
-### Code structure for forecast model
+### 1. Code structure for forecast model
 ```bash
 ├── cleaned data
 │   ├── allbirds_detection.feather
@@ -48,8 +48,8 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 │   ├── Final Report - Phase 2.docx
 ```
 
-### Model training
-**1. Algorithm selection:**
+### 2. Model training
+**2.1 Algorithm selection:**
 - *Initial testing*: evaluated several time series forecasting models on a sample of 50 species (700 models). Narrowed down options to Prophet and Silverkite for performance and scalability
 - *Comparison Silverkite and Prophet*:
   + Both accept similar time series data and provide options for customizing seasonality, holidays, trend handling, and hyperparameter tuning. 
@@ -59,33 +59,33 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 - *Fine-tune both models* using parameter tuning via grid search, cross-validation, and parallel processing.
 - *Final choice*: Prophet due to efficiency for broader forecasting.
 
-**2. Final Prophet model:**
+**2.2 Final Prophet model:**
 - Employ logistic growth for a saturating minimum, stabilizing values near limits
 - Predict zero for forecasted values below zero for logical consistency.
   
-**3. Optimization:**
+**2.3 Optimization:**
 - Focus on tuning the changepoint prior scale parameter.
 - Implement grid search with RMSE minimization for each bird-county pair.
 - Develop a function for testing parameters within a multiprocessing.Pool object for parallel processing and efficiency.
 
 Please refer to Final Report - Phase 2.docx for hyperparameter tuning and parallel processing details.
 
-**4. Evaluation:** Models' performance was evaluated using RMSE and MAE metrics.
+**2.4 Evaluation:** Models' performance was evaluated using RMSE and MAE metrics.
 
-### Result 
-**1. Total runtime** (6510 models): 1 hr 30 min, 11.6 seconds/ species
+### 2. Result 
+**2.1 Total runtime** (6510 models): 1 hr 30 min, 11.6 seconds/ species
 
-**2. Satisfactory accuracy**
+**2.2 Satisfactory accuracy**
 
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/989b45ef-74f1-42f5-bd85-00f2e07049e0" width="400">
 
 
-**3. Model performance varies across counties**
+**2.3 Model performance varies across counties**
 
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/57f1377e-cc21-4d41-a087-a51bb13b1b55" width="550">
 
 
-**4 Model performance varies across species**
+**2.4 Model performance varies across species**
 - High predictive accuracy for migratory birds because of pronounced seasonal patterns
 
 <img src="https://github.com/nhathpham/Scalable-Bird-Detection-Forecast/assets/87089936/2f03f4bb-0ba2-46f1-86cd-9f73eee91743" width="400">
