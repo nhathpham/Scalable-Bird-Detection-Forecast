@@ -50,7 +50,7 @@ Throughout the project, we actively engaged with birdwatchers and conservationis
 **2.1 Algorithm selection:**
 - *Initial testing*: evaluated several time series forecasting models on a sample of 50 species (700 models). Narrowed down options to Prophet and Silverkite for performance and scalability
 - *Comparison Silverkite and Prophet*:
-  + Both accept similar time series data and provide options for customizing seasonality, holidays, trend handling, and hyperparameter tuning. 
+  + Both accept provide options for customizing seasonality, holidays, trend handling, and hyperparameter tuning. 
   + Prophet uses a Bayesian approach to fit a model
   + Silverkite uses more traditional models such as a ridge, elastic net, and boosted trees
   + Both can model linear growth. Only Silverkite can handle square root and quadratic growth, while only Prophet can model logistic growth.
